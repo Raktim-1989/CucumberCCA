@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="4" time="53.563983">
+    <testcase classname="Title of your feature" name="To calculate college fee for different type of student" time="14.534418">
+        <system-out><![CDATA[Given Browser is launched and user is on application page...................passed
+When I verify all the form fields for "Day Scholar" along with "" in step...passed
+Then I verify the "120000" along with "" along with "" along with "120000" in step.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Title of your feature" name="To calculate college fee for different type of student 2" time="12.296071">
+        <system-out><![CDATA[Given Browser is launched and user is on application page...................passed
+When I verify all the form fields for "Hosteller" along with "1" in step....passed
+Then I verify the "120000" along with "75750" along with "30300" along with "226050" in step.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Title of your feature" name="To calculate college fee for different type of student 3" time="12.479551">
+        <system-out><![CDATA[Given Browser is launched and user is on application page...................passed
+When I verify all the form fields for "Hosteller" along with "2" in step....passed
+Then I verify the "120000" along with "75750" along with "15150" along with "210900" in step.passed
+]]></system-out>
+    </testcase>
+    <testcase classname="Title of your feature" name="To calculate college fee for different type of student 4" time="14.253943">
+        <system-out><![CDATA[Given Browser is launched and user is on application page...................passed
+When I verify all the form fields for "Hosteller" along with "3" in step....passed
+Then I verify the "120000" along with "75750" along with "" along with "195750" in step.passed
+]]></system-out>
+    </testcase>
+</testsuite>

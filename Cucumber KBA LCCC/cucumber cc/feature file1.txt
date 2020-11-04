@@ -1,0 +1,13 @@
+#Please Do not change Feature Templet
+Feature: Customer Registration
+#Please Do not change Scenario Outline Templet
+Scenario Outline: User registered on entering the user details and click on Submit button
+#Please Do not change Given Templet
+Given User launches the Registration URL
+When #Please file the codes as per the problem statement.
+When User enters name as "<Name>", Age as "<Age>", Address as "<Address>", Phone Number as "<Phone>", Email as "<Email>", clicks "<Button>" button
+Then user is registered with user details displayed
+
+Examples:
+          |Name|Age|Address|Phone|Email  |Button|
+          |aa  |23 |bantala|12355|a@b.com|Submit|

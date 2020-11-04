@@ -1,0 +1,74 @@
+package stepDefinition;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.firefox.FirefoxBinary;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import static org.testng.Assert.assertEquals;
+
+public class stepDefinition {
+public WebDriver driver;
+String text;
+String click, customername, age, address, phonenumber, email, expname;
+String Expected = "Registered Succesfully";
+
+@Given("^User launches the Registration URL$")
+public void setUp() {
+System.setProperty("webdriver.gecko.driver", "/usr/bin/geckodriver");
+    FirefoxBinary firefoxBinary = new FirefoxBinary();
+    firefoxBinary.addCommandLineOptions("--headless");
+        FirefoxProfile profile=new FirefoxProfile();
+    FirefoxOptions firefoxOptions = new FirefoxOptions();
+    firefoxOptions.setBinary(firefoxBinary);
+    firefoxOptions.setProfile(profile);
+        driver=new FirefoxDriver(firefoxOptions);
+driver.get("http://webapps.tekstac.com/CustomerRegistration/Index");
+       
+}
+
+@When("^User enters name as \"([^\"]*)\", Age as \"([^\"]*)\", Address as \"([^\"]*)\", Phone Number as \"([^\"]*)\", Email as \"([^\"]*)\", clicks \"([^\"]*)\" button$")
+public void testCustomerRegistration(String arg1, String arg2, String arg3, String arg4, String arg5, String arg6) throws Throwable {
+   driver.findElement(By.xpath("//input[@name='cname']")).sendKeys(arg1);
+   customername=arg1;
+   driver.findElement(By.xpath("//input[@name='age']")).sendKeys(arg2);
+   age=arg2;
+        driver.findElement(By.xpath("//input[@name='address']")).sendKeys(arg3);
+        address=arg3;
+        driver.findElement(By.xpath("//input[@name='phonenumber']")).sendKeys(arg4);
+        phonenumber=arg4;
+        driver.findElement(By.xpath("//input[@name='email']")).sendKeys(arg5);
+        email=arg5;
+        driver.findElement(By.xpath("//input[@name='"+arg6.toLowerCase()+"']")).click();
+//Please fill the Required code
+click=arg6;
+}
+
+@Then("^user is registered with user details displayed$")
+public void validateResult() throws Throwable {
+   //Please fill the Required code
+if(click.toLowerCase()=="submit"){
+driver.findElement(By.xpath("//td[text()='Name']/following-sibling::td")).getText();
+driver.findElement(By.xpath("//td[text()='Age']/following-sibling::td")).getText();
+driver.findElement(By.xpath("//td[text()='Address']/following-sibling::td")).getText();
+driver.findElement(By.xpath("//td[text()='Phone number']/following-sibling::td")).getText();
+driver.findElement(By.xpath("//td[text()='Email']/following-sibling::td")).getText();
+if (driver.findElement(By.xpath("//h2")).getText()==Expected){
+   
+}
+////h2
+
+}
+}
+
+}
+
+
